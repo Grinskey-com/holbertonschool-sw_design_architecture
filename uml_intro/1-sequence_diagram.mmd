@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant User
+    participant Library
+    participant Book
+
+    user->>Library: create_loan()
+    Library->>Book: mark_as_available()
+    create participant Loan 
+    Library->>Loan: create loan
+    Library->>User: loan created
+    
