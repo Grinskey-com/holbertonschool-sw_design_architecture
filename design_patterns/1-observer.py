@@ -46,11 +46,11 @@ def main() -> None:
 
     log = LogObserver()
     email = EmailObserver()
+    sms = SmsObserver()
 
     subject.subscribe(log, topics={"sports", "breaking"})
     subject.subscribe(email)  # None = receives all topics
-
-    # TODO: instantiate SmsObserver and subscribe it to topics={"breaking"} only
+    subject.subscribe(sms, topics={"breaking"})
 
     subject.notify("weather", "rain")
     subject.notify("sports", "goal")
